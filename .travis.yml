@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "8"
+
+cache: npm
+
+branches:
+  only:
+    - master
+
+before_script:
+  - npm install firebase-tools
+
+script:
+  - npm run build:prod
+
+after_success:
+  - firebase deploy --token=${FIREBASE_TOKEN}
