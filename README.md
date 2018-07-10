@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/modelorona/gdg-glasgow-site.svg?token=tk9zqQp3jmzN5esaEzB8&branch=master)](https://travis-ci.com/modelorona/gdg-glasgow-site)
+[![Build Status](https://travis-ci.com/modelorona/gdg-glasgow.com.svg?branch=master)](https://travis-ci.com/modelorona/gdg-glasgow.com)
 
 # GDG Glasgow Landing Site
 
