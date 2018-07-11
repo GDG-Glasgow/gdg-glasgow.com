@@ -12,43 +12,51 @@
         "destination": "/index.html"
       }
     ],
-    "headers": [ {
-      "source": "**/*.@(jpg|jpeg|gif|png|ico)",
-      "headers": [ {
-        "key" : "Cache-Control",
-        "value" : "max-age=2592000"
-      }]
-    }, {
-      "source": "**/*.@(css|js|eot|otf|ttf|ttc|woff|font.css)",
-      "headers": [{
-        "key": "Cache-Control",
-        "value": "max-age=1296000"
-      }]
-    }, {
-      "source": "**",
-      "headers": [ {
-        "key": "X-Frame-Options",
-        "value": "SAMEORIGIN"
-      }, {
-        "key": "X-XSS-Protection",
-        "value": "1;mode=block"
-      }, {
-        "key": "X-Content-Type-Options",
-        "value": "nosniff"
-      }, {
-        "key": "Referrer-Policy",
-        "value": "same-origin"
-      }, {
-        "key": "Strict-Transport-Security",
-        "value": "max-age=15768000"
-      }, {
-        "key": "Referrer-Policy",
-        "value": "no-referrer"
-      }, {
-        "key": "X-Powered-By",
-        "value": "Intel Pentium 3"
-      }]
-    } ],
+    "headers": [
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|ico)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=2592000"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(css|js|eot|otf|ttf|ttc|woff|font)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=1296000"
+          }
+        ]
+      },
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "X-Frame-Options",
+            "value": "SAMEORIGIN"
+          },
+          {
+            "key": "X-XSS-Protection",
+            "value": "1;mode=block"
+          },
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "Referrer-Policy",
+            "value": "no-referrer"
+          },
+          {
+            "key": "X-Powered-By",
+            "value": "Intel Pentium 3"
+          }
+        ]
+      }
+    ],
     "cleanUrls": true
   }
 }
