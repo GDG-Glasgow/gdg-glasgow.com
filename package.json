@@ -9,7 +9,14 @@
     "watch": "./node_modules/.bin/webpack --watch",
     "dev": "./node_modules/.bin/webpack-dev-server"
   },
-  "keywords": ["webpack", "gdg", "gdg glasgow", "nodejs", "firebase", "hosting"],
+  "keywords": [
+    "webpack",
+    "gdg",
+    "gdg glasgow",
+    "nodejs",
+    "firebase",
+    "hosting"
+  ],
   "author": "GDG Glasgow",
   "license": "MIT",
   "devDependencies": {
