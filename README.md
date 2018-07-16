@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/GDG-Glasgow/gdg-glasgow.com.svg?branch=master)](https://travis-ci.com/GDG-Glasgow/gdg-glasgow.com) ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)
+[![Build Status](https://travis-ci.org/GDG-Glasgow/gdg-glasgow.com.svg?branch=master)](https://travis-ci.org/GDG-Glasgow/gdg-glasgow.com) ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)
 
 
 # GDG Glasgow Landing Site
