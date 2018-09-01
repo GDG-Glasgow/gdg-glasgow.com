@@ -1,13 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    let form = document.getElementById('contact-form-modal');
+
     // opening the modal
     document.getElementById('contact').addEventListener('click', function () {
-        document.getElementById('contact-form-modal').classList.add('is-active');
+        form.classList.add('is-active');
     });
 
     // closing the modal
     document.getElementById('close-modal').addEventListener('click', function () {
-        document.getElementById('contact-form-modal').classList.remove('is-active');
+        form.classList.remove('is-active');
+    });
+
+    // close the modal if opened and the esc button was pressed
+    document.addEventListener('keydown', function (evt) {
+        if (evt.key === "Escape" || evt.key === "Esc"){
+            form.classList.remove('is-active');
+        }
     });
 
     let pastEventsURL = 'https://api.meetup.com/Glasgow-New-Technology-Meetup/events?desc=true&photo-host=public&sig_id=258287963&status=past&sig=8b70295893afcb37d02915385ab3890d1068e4dd';
