@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // close the modal if opened and the esc button was pressed
     document.addEventListener('keydown', function (evt) {
-        if (evt.key === "Escape" || evt.key === "Esc"){
+        if (evt.key === "Escape" || evt.key === "Esc") {
             form.classList.remove('is-active');
         }
     });
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let pastEventsURL = 'https://api.meetup.com/Glasgow-New-Technology-Meetup/events?desc=true&photo-host=public&sig_id=258287963&status=past&sig=8b70295893afcb37d02915385ab3890d1068e4dd';
     let upcomingEventsURL = 'https://api.meetup.com/Glasgow-New-Technology-Meetup/events?photo-host=public&sig_id=258287963&status=upcoming&sig=2adcde9e8641287e665bd60681b5d6a10c0f0833';
 
-    function setEvents(events, type){
+    function setEvents(events, type) {
         let list;
         // type of 0 is past events
         if (type === 0) {
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
             list = document.getElementById('upcoming-list');
         }
         // if length is 0, then no events and we display a small text to check back. this really only applies to upcoming events
-        if (events.length === 0){
+        if (events.length === 0) {
             let text = document.createElement('p');
             text.classList.add('has-text-centered-mobile', 'has-text-weight-light', 'is-size-5');
             text.appendChild(document.createTextNode('Stay tuned!'));
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // set the upcoming events
-    window.upcomingcallback = function(data){
+    window.upcomingcallback = function (data) {
         setEvents(data.data, 1);
     };
     let upcomingScript = document.createElement('script');
@@ -62,11 +62,40 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.appendChild(upcomingScript);
 
     // set the past events
-    window.pastcallback = function(data){
+    window.pastcallback = function (data) {
         setEvents(data.data, 0);
     };
     let pastScript = document.createElement('script');
     pastScript.setAttribute('src', pastEventsURL + '&callback=pastcallback');
     document.body.appendChild(pastScript);
+
+
+    // get the slider
+    let slider = document.getElementById("slider");
+
+    // current slider position
+    let sliderPos = 0;
+
+    // get the children of the slider
+    let children = slider.children;
+
+    // the total amount of images/children
+    let maxImgs = children.length;
+
+    setInterval(function () {
+        // reference to the current image before it gets changed
+        let currentImg = sliderPos.valueOf();
+
+        // increment the slider position and return it to the start as necessary
+        if ((sliderPos + 1) === maxImgs) {
+            sliderPos = 0;
+        } else {
+            sliderPos++;
+        }
+
+        children[currentImg].classList.add('is-hidden');
+        children[sliderPos].classList.remove('is-hidden');
+
+    }, 3500);
 
 }, false);
